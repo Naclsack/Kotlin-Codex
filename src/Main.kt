@@ -32,8 +32,10 @@ fun main() {
     //Properties can be referenced directly by their name
     val person = Person("Aaron", "Hynes")
     val person2 = Person()
-    person.nickName = "Salty"
-    println(person.firstName + person.lastName + person.nickName)
+    //person.nickName = "Salty"
+    //person.nickName = "Stretch"
+    println(person.nickName)
+    person.printInfo()
     //println(person2.firstName + person2.lastName)
 
 }
