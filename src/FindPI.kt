@@ -13,7 +13,6 @@ fun turnIntToArray() {
     var array = "$PI"
     println()
 
-
 }
 
 fun funWithPI() {
@@ -22,7 +21,7 @@ fun funWithPI() {
     println("1. Find the Nth number of PI.")
     println("2. Find the first occurrence of a number.")
     try {
-        var funcToDo = readLine()
+        val funcToDo = readLine()
         if (funcToDo != null) {
             determineFunc(funcToDo.toInt())
             }
@@ -51,12 +50,7 @@ fun findNumberInPI(findDigit: Int) {
 fun findNthInPI(digitToFind: Int) {
 
     try {
-        if (digitToFind != null) {
-            println("The $digitToFind th of PI is: " + PI_ARRAY[digitToFind - 1])
-        }else{
-            println("Enter a valid number please!")
-            findDigit()
-        }
+        println("The $digitToFind th of PI is: " + PI_ARRAY[digitToFind - 1])
     }catch(e: ArrayIndexOutOfBoundsException){
         println("Please pick a smaller number!")
         findDigit()
