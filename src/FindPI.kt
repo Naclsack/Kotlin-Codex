@@ -3,6 +3,12 @@ val PI_ARRAY = arrayOf(1,4,1,5,9,2,6,5,3,5,9)
 
 fun main() {
 
+    funWithPI()
+
+}
+
+fun funWithPI() {
+
     println("What function do you wish to do?")
     println("1. Find the Nth number of PI.")
     println("2. Find the first occurrence of a number.")
@@ -10,13 +16,11 @@ fun main() {
     if (funcToDo != null) {
         determineFunc(funcToDo.toInt())
     }
-
-
 }
 
-fun determineFunc(func: Int) {
+fun determineFunc(funcToUse: Int) {
 
-    when(func){
+    when(funcToUse){
         1 -> findNthInPI(findDigit())
         2 -> findNumberInPI(findDigit())
     }
@@ -28,13 +32,6 @@ fun findNumberInPI(findDigit: Int?) {
     var number = PI_ARRAY.indexOf(findDigit)
     number += 1
     println("The first occurrence of $findDigit in PI is in position $number")
-}
-
-fun findDigit(): Int? {
-
-        println("Please enter a number.")
-        var digit = readLine()
-        return digit?.toInt()
 }
 
 fun findNthInPI(digitToFind: Int?) {
@@ -51,4 +48,11 @@ fun findNthInPI(digitToFind: Int?) {
         findDigit()
     }
 
+}
+
+fun findDigit(): Int? {
+
+    println("Please enter a number.")
+    var digit = readLine()
+    return digit?.toInt()
 }
