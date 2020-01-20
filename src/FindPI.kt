@@ -3,15 +3,7 @@ val PI_ARRAY = arrayOf(1,4,1,5,9,2,6,5,3,5,9)
 
 fun main() {
 
-    //turnIntToArray()
     funWithPI()
-
-}
-
-fun turnIntToArray() {
-
-    var array = "$PI"
-    println()
 
 }
 
@@ -43,8 +35,13 @@ fun determineFunc(funcToUse: Int) {
 fun findNumberInPI(findDigit: Int) {
 
     var number = PI_ARRAY.indexOf(findDigit)
-    number += 1
-    println("The first occurrence of $findDigit in PI is in position $number")
+    if(number == -1) {
+        println("That number is not within the first 11 digits of PI")
+        funWithPI()
+    }else {
+        number += 1
+        println("The first occurrence of $findDigit in PI is in position $number")
+    }
 }
 
 fun findNthInPI(digitToFind: Int) {
