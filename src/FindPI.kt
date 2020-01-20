@@ -3,7 +3,16 @@ val PI_ARRAY = arrayOf(1,4,1,5,9,2,6,5,3,5,9)
 
 fun main() {
 
+    //turnIntToArray()
     funWithPI()
+
+}
+
+fun turnIntToArray() {
+
+    var array = "$PI"
+    println()
+
 
 }
 
@@ -12,9 +21,14 @@ fun funWithPI() {
     println("What function do you wish to do?")
     println("1. Find the Nth number of PI.")
     println("2. Find the first occurrence of a number.")
-    var funcToDo = readLine()
-    if (funcToDo != null) {
-        determineFunc(funcToDo.toInt())
+    try {
+        var funcToDo = readLine()
+        if (funcToDo != null) {
+            determineFunc(funcToDo.toInt())
+            }
+    }catch(e: NumberFormatException){
+        println("Please enter a number!")
+        funWithPI()
     }
 }
 
@@ -27,14 +41,14 @@ fun determineFunc(funcToUse: Int) {
 
 }
 
-fun findNumberInPI(findDigit: Int?) {
+fun findNumberInPI(findDigit: Int) {
 
     var number = PI_ARRAY.indexOf(findDigit)
     number += 1
     println("The first occurrence of $findDigit in PI is in position $number")
 }
 
-fun findNthInPI(digitToFind: Int?) {
+fun findNthInPI(digitToFind: Int) {
 
     try {
         if (digitToFind != null) {
@@ -50,9 +64,14 @@ fun findNthInPI(digitToFind: Int?) {
 
 }
 
-fun findDigit(): Int? {
+fun findDigit(): Int {
 
     println("Please enter a number.")
     var digit = readLine()
-    return digit?.toInt()
+    return if (digit == null) {
+        println("Please enter a valid number!")
+        findDigit()
+    } else {
+        return digit.toInt()
+    }
 }
