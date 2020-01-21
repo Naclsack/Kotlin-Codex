@@ -3,7 +3,7 @@ import kotlin.concurrent.thread
 class SimpleThreads: Thread(){
 
     override fun run() {
-        println("${Thread.currentThread()} from SimpleThreads has run!")
+        println("${currentThread()} from SimpleThreads has run!")
     }
 
 }
